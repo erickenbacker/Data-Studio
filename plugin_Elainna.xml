@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://plugin.powerschool.pearson.com"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://plugin.powerschool.pearson.com plugin.xsd"
+        name="Lex1 Plugin"
+        version="2022.02.10"
+        description="Plugin to sync with Data for use with Lex1 Appications. Copied from:Apple School Manager v1.5">
+
+    <!-- Generates client API creds -->
+    <oauth />
+
+    <!-- Allows automatic registration when PowerSchool admin installs plugin -->
+    <!-- Turn on when needed
+    <registration url="https://endpoint.com" />
+    -->
+
+    <!-- Defines which data we can access -->
+    <access_request>
+
+
+        <!-- Students -->
+        <field table="students" field="dcid" access="ViewOnly" />
+        <field table="students" field="id" access="ViewOnly" />
+        <field table="students" field="schoolid" access="ViewOnly" />
+        <field table="students" field="grade_level" access="ViewOnly" />
+        <field table="students" field="student_number" access="ViewOnly" />
+        <field table="students" field="lastfirst" access="ViewOnly" />
+        <field table="students" field="last_name" access="ViewOnly" />
+        <field table="students" field="first_name" access="ViewOnly" />
+        <field table="students" field="gender" access="ViewOnly" />
+        <field table="students" field="ethnicity" access="ViewOnly" />
+        <field table="students" field="dob" access="FullAccess" />
+        <field table="students" field="entrydate" access="ViewOnly" />
+        <field table="students" field="exitdate" access="ViewOnly" />
+        <field table="students" field="next_school" access="ViewOnly" />
+        <field table="students" field="enroll_status" access="ViewOnly" />
+        <field table="students" field="exitcode" access="ViewOnly" />
+        <field table="students" field="state_studentnumber" access="ViewOnly" />
+        <field table="students" field="street" access="ViewOnly" />
+        <field table="students" field="city" access="ViewOnly" />
+        <field table="students" field="state" access="ViewOnly" />
+        <field table="students" field="zip" access="ViewOnly" />
+        <field table="students" field="home_room" access="ViewOnly" />
+        <field table="students" field="middle_name" access="ViewOnly" />
+        <field table="students" field="track" access="ViewOnly" />
+
+        <!-- s_Sc_stu_x -->
+        <field table="s_Sc_stu_x" field="altassesscde" access="ViewOnly" />
+        <field table="s_Sc_stu_x" field="diploma_type" access="ViewOnly" />
+        <field table="s_Sc_stu_x" field="diplomaearncode" access="ViewOnly" />
+        <field table="s_Sc_stu_x" field="dropout_date" access="ViewOnly" />
+        <field table="s_Sc_stu_x" field="dropout_Reason" access="ViewOnly" />
+        <field table="s_Sc_stu_x" field="engl_prof" access="ViewOnly" />
+        <field table="s_Sc_stu_x" field="graddate" access="ViewOnly" />
+        <field table="s_Sc_stu_x" field="gt_qualified" access="ViewOnly" />
+        <field table="s_Sc_stu_x" field="homelang" access="ViewOnly" />
+        <field table="s_Sc_stu_x" field="instrsetting" access="ViewOnly" />
+        <field table="s_Sc_stu_x" field="mckinney_vento_serv" access="ViewOnly" />
+        <field table="s_Sc_stu_x" field="migrant" access="ViewOnly" />
+        <field table="s_Sc_stu_x" field="moved_to_district" access="ViewOnly" />
+        <field table="s_Sc_stu_x" field="moved_to_School" access="ViewOnly" />
+        <field table="s_Sc_stu_x" field="ninthgradecode" access="ViewOnly" />
+        <field table="s_Sc_stu_x" field="usschentrydate" access="ViewOnly" />
+        <field table="s_Sc_stu_x" field="yrgedearned" access="ViewOnly" />
+        <field table="s_Sc_stu_x" field="adulted_entrydate" access="ViewOnly" />
+        <field table="s_Sc_stu_x" field="studentsdcid" access="ViewOnly" />
+        <field table="s_Sc_stu_x" field="altassesscde" access="ViewOnly" />
+        <field table="s_Sc_stu_x" field="altassessexception" access="ViewOnly" />
+        <field table="s_Sc_stu_x" field="ALTASSESSTA_FIRSTNAME" access="ViewOnly" />
+        <field table="s_Sc_stu_x" field="ALTASSESSTA_LASTNAME" access="ViewOnly" />
+        <field table="s_Sc_stu_x" field="DEAFBLINDIND" access="ViewOnly" />
+        <field table="s_Sc_stu_x" field="ELASORTID" access="ViewOnly" />
+        <field table="s_Sc_stu_x" field="ELDAONLINE_LISTENING" access="ViewOnly" />
+        <field table="s_Sc_stu_x" field="ELDAONLINE_SPEAKING" access="ViewOnly" />
+        <field table="s_Sc_stu_x" field="ELDAONLINE_WRITING" access="ViewOnly" />
+        <field table="s_Sc_stu_x" field="EOCEPONLINEALG" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="EOCEPONLINEBIO" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="EOCEPONLINEENG" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="EOCEPONLINEUSHC" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="GRADEXPRESS" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="HSAPMATERIALSCDE" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="HSAPONLINE_ELA" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="HSAPONLINE_MATH" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="KNDRGRTNPREVPGM" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="LEPALTASSESS" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="MATHSORTID" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="MULTIDISABIND" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="ORALELA" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="ORALLEPWRIT" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="ORALMATH" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="ORALSCIENCE" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="ORALSOCSTUDIES" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="ORALWRITING" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="READINESS_SCORE1_4K" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="READINESS_SCORE1_5K" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="READINESS_SCORE2_4K" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="READINESS_SCORE2_5K" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="READINESS_TESTDATE1_4K" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="READINESS_TESTDATE1_5K" access="ViewOnly" />
+ <field table="s_Sc_stu_x" field="READINESS_TESTDATE2_4K" access="ViewOnly" />
+ <field table="s_Sc_stu_x" field="READINESS_TESTDATE2_5K" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="REQEXCLUSION" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="SCIENCESORTID" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="SOCSTUDIESSORTID" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="STUDENTNOTTESTED_LEP" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="STUDENTNOTTESTED_REASON_LEP" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="STUNOTTESTED" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="STUNOTTESTEDREASON" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="TESTMISSED" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="WRITINGSORTID" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="WHENMODIFIED" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="CRDC_UNGRADED_YN" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="ORAL_COMMUN_LANG" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="PRECODE1" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="PRECODE2" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="TRANS_MODE_PM" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="WRITTEN_COMMUN_LANG" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="AWARDEARNCODE" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="AWARDORDCODE" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="BUSINFO1" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="BUSINFO2" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="COMPHEALTHEDCODE" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="COUNTY" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="DIPLOMA_TYPE" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="DIPLOMAEARNCODE" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="DIPLOMAORDCODE" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="DIPLOMAORDID" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="DROPOUT_DATE" access="ViewOnly" />DROPOUT_REASON" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="ENGL_PROF" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="FIRST_LANG_SPOKEN" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="FOSTER_HOME" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="GRADDATE" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="GRIDCODE" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="GT_QUALIFIED" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="HOMELANG" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="INSTRSETTING" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="MCKINNEY_VENTO_SERV" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="MEDICAIDID" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="MIGRANT" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="MOGEDEARNED" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="MOVED_TO_DISTRICT" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="MOVED_TO_SCHOOL" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="NICKNAME" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="NIGHT_RESIDENCE" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="NINTHGRADECODE" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="NOSHOW_REASON" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="OTHERNAME" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="PARENTSMILITARYSTATUS" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="PECOMPCODE" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="PLAN504CODE" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="RETAINREASONCODE" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="SCHOLARSHIPORDCODE" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="SCHOOLRES" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="STUDENT_BIRTHCNTRY" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="STUDENT_BIRTHPLACE" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="STUDENTGENERATION" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="TITLE1ASSTTYPECODE" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="TITLE1MATHIND" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="TITLE1READIND" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="TRANS_MODE_AM" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="TRUEGRADE" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="UNACCOMP_YOUTH" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="USSCHENTRYDATE" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="YRGEDEARNED" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="SELFCONTAINED" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="INCLUDEINREPORTING" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="TRANS_AM_COMMENT" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="TRANS_PM_COMMENT" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="ADULTED_ENTRYDATE" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="ADULTED_EXITDATE" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="AP_PARTICIPANT_NBR" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="IB_CANDIDATE_NBR" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="OTHER_ALTASSESSTEST_SCHOOLID" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="PRECODE3" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="PRECODE4" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="ADULTED_GRADDATE" access="ViewOnly" />
+  <field table="s_Sc_stu_x" field="ELASESSIONSORALADMIN" access="ViewOnly" />
+  <field table="s_Sc_stu_x" field="ELIG504_NOPLANIND" access="ViewOnly" />
+  <field table="s_Sc_stu_x" field="EOCEPPAPERELA" access="ViewOnly" />
+  <field table="s_Sc_stu_x" field="EOCEPPAPERMATH" access="ViewOnly" />
+  <field table="s_Sc_stu_x" field="EOCEPPAPERSCIENCE" access="ViewOnly" />
+  <field table="s_Sc_stu_x" field="EOCEPPAPERSOCSTU" access="ViewOnly" />
+  <field table="s_Sc_stu_x" field="G38PAPERELA" access="ViewOnly" />
+  <field table="s_Sc_stu_x" field="G38PAPERMATH" access="ViewOnly" />
+  <field table="s_Sc_stu_x" field="G38PAPERSCIENCE" access="ViewOnly" />
+  <field table="s_Sc_stu_x" field="G38PAPERSOCSTU" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="MEDICAIDELIGIBLE_DATE" access="ViewOnly" />,
+  <field table="s_Sc_stu_x" field="NEEDSBRAILLEIND" access="ViewOnly" />
+  <field table="s_Sc_stu_x" field="PRECODE5" access="ViewOnly" />
+  <field table="s_Sc_stu_x" field="PRECODE6" access="ViewOnly" />
+  <field table="s_Sc_stu_x" field="PRECODE7" access="ViewOnly" />
+  <field table="s_Sc_stu_x" field="PRECODE8 " access="ViewOnly" />
+<field table="s_Sc_stu_x" field="AED_COMPLETION_DATE" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="AED_OPTOUT_DATE      " access="ViewOnly" />
+<field table="s_Sc_stu_x" field="CPR_COMPLETION_DATE" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="CPR_OPTOUT_DATE" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="CEIS_IND" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="INIT_TESTDATE" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="INIT_TESTSCORE" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="INIT_TESTTYPE" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="PIP_STATUS" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="SEI_CREATE_DATE" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="SEI_STATUS" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="WAIVER_IND" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="CR_ACCOMMODATIONS" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="CR_grade12" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="CR_PaPER" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="UNIVERSAL_SCREENER" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="cr_oral_accommodation" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="elp_paper" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="TIER " access="ViewOnly" />
+<field table="s_Sc_stu_x" field="diploma_seals" access="ViewOnly" />
+<field table="s_Sc_stu_x" field="specialization_area" access="ViewOnly" /> 
+
+        <!-- Teachers -->
+        <field table="Teachers" field="STATUS" access="ViewOnly" />
+<field table="Teachers" field="STAFFSTATUS      " access="ViewOnly" />
+<field table="Teachers" field="DCID      " access="ViewOnly" />
+<field table="Teachers" field="ID      " access="ViewOnly" />
+<field table="Teachers" field="SCHOOLID      " access="ViewOnly" />
+<field table="Teachers" field="EMAIL_ADDR" access="ViewOnly" />
+<field table="Teachers" field="SCHOOL_PHONE" access="ViewOnly" />
+<field table="Teachers" field="HOME_PHONE " access="ViewOnly" />
+<field table="Teachers" field="STATE" access="ViewOnly" />
+<field table="Teachers" field="ZIP " access="ViewOnly" />
+<field table="Teachers" field="LAST_NAME" access="ViewOnly" />
+<field table="Teachers" field="FIRST_NAME" access="ViewOnly" />
+<field table="Teachers" field="STREET" access="ViewOnly" />
+<field table="Teachers" field="CITY " access="ViewOnly" />
+<field table="Teachers" field="ETHNICITY" access="ViewOnly" />
+<field table="Teachers" field="SCHED_GENDER" access="ViewOnly" />
+<field table="Teachers" field="TEACHERNUMBER" access="ViewOnly" />
+<field table="Teachers" field="TITLE" access="ViewOnly" />
+<field table="Teachers" field="lastfirst" access="ViewOnly" />
+ <field table="Teachers" field="sif_stateprid" access="ViewOnly" />
+
+        <!-- Courses -->
+             <field table="courses" field="DCID" access="ViewOnly" />
+      <field table="courses" field="ID" access="ViewOnly" />
+<field table="courses" field="COURSE_NUMBER" access="ViewOnly" />
+<field table="courses" field="COURSE_NAME" access="ViewOnly" />
+<field table="courses" field="CREDIT_HOURS" access="ViewOnly" />
+<field table="courses" field="SCHOOLID" access="ViewOnly" />
+<field table="courses" field="VOCATIONAL" access="ViewOnly" />
+<field table="courses" field="STATUS" access="ViewOnly" />
+<field table="courses" field="CREDITTYPE" access="ViewOnly" />
+<field table="courses" field="SCHED_YEAR" access="ViewOnly" />
+<field table="courses" field="SCHED_DEPARTMENT" access="ViewOnly" />
+<field table="courses" field="SCHED_COURSESUBJECTAREACODE" access="ViewOnly" />
+<field table="courses" field="GRADESCALEID" access="ViewOnly" />
+<field table="courses" field="excludefromstoredgrades" access="ViewOnly" />
+
+        <!-- Sections -->
+     <field table="sections" field="DCID" access="ViewOnly" />
+<field table="sections" field="ID" access="ViewOnly" />
+<field table="sections" field="SCHOOLID" access="ViewOnly" />
+<field table="sections" field="COURSE_NUMBER" access="ViewOnly" />
+<field table="sections" field="GRADE_LEVEL" access="ViewOnly" />
+<field table="sections" field="SECTION_NUMBER" access="ViewOnly" />
+<field table="sections" field="TEACHER" access="ViewOnly" />
+<field table="sections" field="TERMID" access="ViewOnly" />
+<field table="sections" field="room" access="ViewOnly" />
+<field table="sections" field="expression" access="ViewOnly" />
+<field table="sections" field="gradescaleid" access="ViewOnly" />
+<field table="sections" field="excludefromstoredgrades" access="ViewOnly" />
+<field table="sections" field="wheretaught" access="ViewOnly" />
+
+<field table="sections" field="EXCLUDE_ADA" access="ViewOnly" />
+
+        <!-- CC -->
+             <field table="cc" field="dcid" access="ViewOnly"/>
+           <field table="cc" field="ID" access="ViewOnly"/>
+<field table="cc" field="STUDENTID" access="ViewOnly"/>
+<field table="cc" field="SECTIONID" access="ViewOnly"/>
+<field table="cc" field="COURSE_NUMBER" access="ViewOnly"/>
+<field table="cc" field="SECTION_NUMBER" access="ViewOnly"/>
+<field table="cc" field="DATEENROLLED" access="ViewOnly"/>
+<field table="cc" field="DATELEFT" access="ViewOnly"/>
+<field table="cc" field="termid" access="ViewOnly"/>
+  
+  <!-- u_Sc3201_sectionextras -->
+             <field table="u_Sc3201_sectionextras" field="immersion" access="ViewOnly"/>
+ 
+  <!-- s_sc_usr_x -->
+             <field table="s_sc_usr_x" field="gender" access="ViewOnly"/>          
+    </access_request>
+
+    <!-- Mandatory element -->
+    <publisher name="Lex1">
+        <contact email="erickenbacker@lexington1.net" />
+    </publisher>
+
+</plugin>

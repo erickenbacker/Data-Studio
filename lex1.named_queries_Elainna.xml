@@ -1,0 +1,414 @@
+<queries>
+    <!-- Students -->
+    <query name="com.lex1.school.students" coreTable="students" flattened="true">
+        <description>Queries for student data</description>
+        <columns>
+            <column>s.dcid</column>
+<column>s.id</column>
+<column>s.schoolid</column>
+<column>s.grade_level</column>
+<column>s.student_number</column>
+<column>s.lastfirst</column>
+<column>s.last_name</column>
+<column>s.first_name</column>
+<column>s.gender</column>
+<column>s.ethnicity</column>
+<column>s.dob</column>
+<column>entrydate</column>
+<column>exitdate</column>
+<column>s.next_school</column>
+<column>s.enroll_status</column>
+<column>s.exitcode</column>
+<column>s.state_studentnumber</column>
+<column>s.street</column>
+<column>s.city</column>
+<column>s.state</column>
+<column>s.zip</column>
+<column>sx.altassesscde</column>
+<column>sx.diploma_type</column>
+<column>sx.diplomaearncode</column>
+<column>sx.dropout_date</column>
+<column>sx.dropout_reason</column>
+<column>sx.engl_prof</column>
+<column>sx.graddate</column>
+<column>sx.gt_qualified</column>
+<column>sx.homelang</column>
+<column>sx.instrsetting</column>
+<column>sx.mckinney_vento_serv</column>
+<column>sx.migrant</column>
+<column>sx.moved_to_district</column>
+<column>sx.moved_to_School</column>
+<column>sx.ninthgradecode</column>
+<column>sx.usschentrydate</column>
+<column>sx.yrgedearned</column>
+<column>sx.adulted_entrydate</column>
+<column>s.home_room</column>
+<column>s.middle_name</column>
+<column>s.track</column>
+        </columns>
+        <sql>
+        <![CDATA[
+select s.dcid,s.id,s.schoolid,s.grade_level,s.student_number,s.lastfirst,s.last_name,s.first_name,s.gender,s.ethnicity,s.dob,
+to_char(entrydate,'YYYY-MM-DD') as entrydate,to_char(exitdate,'YYYY-MM-DD') as exitdate,s.next_school,s.enroll_status,s.exitcode,s.lunchstatus,s.state_studentnumber,s.street,s.city,s.state,s.zip,
+sx.altassesscde,sx.diploma_type,sx.diplomaearncode,sx.dropout_date,sx.dropout_reason,sx.engl_prof,
+sx.graddate,sx.gt_qualified,sx.homelang,sx.instrsetting,sx.mckinney_vento_serv,sx.migrant,sx.moved_to_district,sx.moved_to_School,sx.ninthgradecode,
+sx.usschentrydate,sx.yrgedearned,sx.adulted_entrydate,s.home_room,s.middle_name,s.track  from students s
+left outer join s_Sc_stu_x sx on sx.studentsdcid = s.dcid
+where
+(to_char(exitdate,'YYYY-MM-DD') >= to_char(entrydate,'YYYY-MM-DD')
+or grade_level = 99)
+        ]]>
+        </sql>
+    </query>
+
+    <!-- Precode -->
+    <query name="com.lex1.school.s_sc_stu_x" coreTable="s_sc_stu_x" flattened="true">
+        <description>Queries for precode data</description>
+        <columns>
+            <column>STUDENTSDCID</column>
+<column>ALTASSESSCDE</column>
+<column>ALTASSESSEXCEPTION</column>
+<column>ALTASSESSTA_FIRSTNAME</column>
+<column>ALTASSESSTA_LASTNAME</column>
+<column>DEAFBLINDIND</column>
+<column>ELASORTID</column>
+<column>ELDAONLINE_LISTENING</column>
+<column>ELDAONLINE_READING</column>
+<column>ELDAONLINE_SPEAKING</column>
+<column>ELDAONLINE_WRITING</column>
+<column>EOCEPONLINEALG</column>
+<column>EOCEPONLINEBIO</column>
+<column>EOCEPONLINEENG</column>
+<column>EOCEPONLINEUSHC</column>
+<column>GRADEXPRESS</column>
+<column>HSAPMATERIALSCDE</column>
+<column>HSAPONLINE_ELA</column>
+<column>HSAPONLINE_MATH</column>
+<column>KNDRGRTNPREVPGM</column>
+<column>LEPALTASSESS</column>
+<column>MATHSORTID</column>
+<column>MULTIDISABIND</column>
+<column>ORALELA</column>
+<column>ORALLEPWRIT</column>
+<column>ORALMATH</column>
+<column>ORALSCIENCE</column>
+<column>ORALSOCSTUDIES</column>
+<column>ORALWRITING</column>
+<column>READINESS_SCORE1_4K</column>
+<column>READINESS_SCORE1_5K</column>
+<column>READINESS_SCORE2_4K</column>
+<column>READINESS_SCORE2_5K</column>
+<column>READINESS_TESTDATE1_4K</column>
+<column>READINESS_TESTDATE1_5K</column>
+ <column>READINESS_TESTDATE2_4K</column>
+ <column>READINESS_TESTDATE2_5K</column>
+<column>REQEXCLUSION</column>
+<column>SCIENCESORTID</column>
+<column>SOCSTUDIESSORTID</column>
+<column>STUDENTNOTTESTED_LEP</column>
+<column>STUDENTNOTTESTED_REASON_LEP</column>
+<column>STUNOTTESTED</column>
+<column>STUNOTTESTEDREASON</column>
+<column>TESTMISSED</column>
+<column>WRITINGSORTID</column>
+<column>WHENMODIFIED</column>
+<column>CRDC_UNGRADED_YN</column>
+<column>ORAL_COMMUN_LANG</column>
+<column>PRECODE1</column>
+<column>PRECODE2</column>
+<column>TRANS_MODE_PM</column>
+<column>WRITTEN_COMMUN_LANG</column>
+<column>AWARDEARNCODE</column>
+<column>AWARDORDCODE</column>
+<column>BUSINFO1</column>
+<column>BUSINFO2</column>
+<column>COMPHEALTHEDCODE</column>
+<column>COUNTY</column>
+<column>DIPLOMA_TYPE</column>
+<column>DIPLOMAEARNCODE</column>
+<column>DIPLOMAORDCODE</column>
+<column>DIPLOMAORDID</column>
+<column>DROPOUT_DATE</column>DROPOUT_REASON</column>
+<column>ENGL_PROF</column>
+<column>FIRST_LANG_SPOKEN</column>
+<column>FOSTER_HOME</column>
+<column>GRADDATE</column>
+<column>GRIDCODE</column>
+<column>GT_QUALIFIED</column>
+<column>HOMELANG</column>
+<column>INSTRSETTING</column>
+<column>MCKINNEY_VENTO_SERV</column>
+<column>MEDICAIDID</column>
+<column>MIGRANT</column>
+<column>MOGEDEARNED</column>
+<column>MOVED_TO_DISTRICT</column>
+<column>MOVED_TO_SCHOOL</column>
+<column>NICKNAME</column>
+<column>NIGHT_RESIDENCE</column>
+<column>NINTHGRADECODE</column>
+<column>NOSHOW_REASON</column>
+<column>OTHERNAME</column>
+<column>PARENTSMILITARYSTATUS</column>
+<column>PECOMPCODE</column>
+<column>PLAN504CODE</column>
+<column>RETAINREASONCODE</column>
+<column>SCHOLARSHIPORDCODE</column>
+<column>SCHOOLRES</column>
+<column>STUDENT_BIRTHCNTRY</column>
+<column>STUDENT_BIRTHPLACE</column>
+<column>STUDENTGENERATION</column>
+<column>TITLE1ASSTTYPECODE</column>
+<column>TITLE1MATHIND</column>
+<column>TITLE1READIND</column>
+<column>TRANS_MODE_AM</column>
+<column>TRUEGRADE</column>
+<column>UNACCOMP_YOUTH</column>
+<column>USSCHENTRYDATE</column>
+<column>YRGEDEARNED</column>
+<column>SELFCONTAINED</column>
+<column>INCLUDEINREPORTING</column>
+<column>TRANS_AM_COMMENT</column>
+<column>TRANS_PM_COMMENT</column>
+<column>ADULTED_ENTRYDATE</column>
+<column>ADULTED_EXITDATE</column>
+<column>AP_PARTICIPANT_NBR</column>
+<column>IB_CANDIDATE_NBR</column>
+<column>OTHER_ALTASSESSTEST_SCHOOLID</column>
+<column>PRECODE3</column>
+<column>PRECODE4</column>
+<column>ADULTED_GRADDATE</column>
+  <column>ELASESSIONSORALADMIN</column>
+  <column>ELIG504_NOPLANIND</column>
+  <column>EOCEPPAPERELA</column>
+  <column>EOCEPPAPERMATH</column>
+  <column>EOCEPPAPERSCIENCE</column>
+  <column>EOCEPPAPERSOCSTU</column>
+  <column>G38PAPERELA</column>
+  <column>G38PAPERMATH</column>
+  <column>G38PAPERSCIENCE</column>
+  <column>G38PAPERSOCSTU</column>
+<column>MEDICAIDELIGIBLE_DATE</column>,
+  <column>NEEDSBRAILLEIND</column>
+  <column>PRECODE5</column>
+  <column>PRECODE6</column>
+  <column>PRECODE7</column>
+  <column>PRECODE8 </column>
+<column>AED_COMPLETION_DATE</column>
+<column>AED_OPTOUT_DATE      </column>
+<column>CPR_COMPLETION_DATE</column>
+<column>CPR_OPTOUT_DATE</column>
+<column>CEIS_IND</column>
+<column>INIT_TESTDATE</column>
+<column>INIT_TESTSCORE</column>
+<column>INIT_TESTTYPE</column>
+<column>PIP_STATUS</column>
+<column>SEI_CREATE_DATE</column>
+<column>SEI_STATUS</column>
+<column>WAIVER_IND</column>
+<column>CR_ACCOMMODATIONS</column>
+<column>CR_grade12</column>
+<column>CR_PaPER</column>
+<column>UNIVERSAL_SCREENER</column>
+<column>cr_oral_accommodation</column>
+<column>elp_paper</column>
+<column>TIER </column>
+<column>diploma_seals</column>
+<column>specialization_area</column> 
+        </columns>
+        <sql>
+        <![CDATA[
+select STUDENTSDCID,ALTASSESSCDE,ALTASSESSEXCEPTION,ALTASSESSTA_FIRSTNAME,ALTASSESSTA_LASTNAME,DEAFBLINDIND,
+ELASORTID,ELDAONLINE_LISTENING,ELDAONLINE_READING,ELDAONLINE_SPEAKING,ELDAONLINE_WRITING,
+EOCEPONLINEALG,EOCEPONLINEBIO,EOCEPONLINEENG,EOCEPONLINEUSHC,GRADEXPRESS,HSAPMATERIALSCDE,HSAPONLINE_ELA,HSAPONLINE_MATH,KNDRGRTNPREVPGM,
+LEPALTASSESS,MATHSORTID,MULTIDISABIND,ORALELA,ORALLEPWRIT,ORALMATH,ORALSCIENCE,ORALSOCSTUDIES,ORALWRITING,READINESS_SCORE1_4K,READINESS_SCORE1_5K,READINESS_SCORE2_4K,READINESS_SCORE2_5K,
+to_char(READINESS_TESTDATE1_4K,'YYYY-MM-DD') READINESS_TESTDATE1_4K,
+to_char(READINESS_TESTDATE1_5K,'YYYY-MM-DD') READINESS_TESTDATE1_5K,
+to_char(READINESS_TESTDATE2_4K,'YYYY-MM-DD') READINESS_TESTDATE2_4K,
+to_char(READINESS_TESTDATE2_5K,'YYYY-MM-DD') READINESS_TESTDATE2_5K,
+REQEXCLUSION,SCIENCESORTID,SOCSTUDIESSORTID,STUDENTNOTTESTED_LEP,STUDENTNOTTESTED_REASON_LEP,STUNOTTESTED,
+STUNOTTESTEDREASON,TESTMISSED,WRITINGSORTID,to_char(WHENMODIFIED,'YYYY-MM-DD') WHENMODIFIED,CRDC_UNGRADED_YN,ORAL_COMMUN_LANG,PRECODE1,PRECODE2,TRANS_MODE_PM,WRITTEN_COMMUN_LANG,
+AWARDEARNCODE,AWARDORDCODE,BUSINFO1,BUSINFO2,COMPHEALTHEDCODE,COUNTY,DIPLOMA_TYPE,DIPLOMAEARNCODE,DIPLOMAORDCODE,DIPLOMAORDID,
+to_char(DROPOUT_DATE,'YYYY-MM-DD') DROPOUT_DATE,DROPOUT_REASON,ENGL_PROF,FIRST_LANG_SPOKEN,FOSTER_HOME,
+to_char(GRADDATE,'YYYY-MM-DD') GRADDATE,GRIDCODE,GT_QUALIFIED,HOMELANG,INSTRSETTING,MCKINNEY_VENTO_SERV,MEDICAIDID,MIGRANT,MOGEDEARNED,MOVED_TO_DISTRICT,MOVED_TO_SCHOOL,
+NICKNAME,NIGHT_RESIDENCE,NINTHGRADECODE,NOSHOW_REASON,OTHERNAME,PARENTSMILITARYSTATUS,PECOMPCODE,PLAN504CODE,RETAINREASONCODE,SCHOLARSHIPORDCODE,SCHOOLRES,
+STUDENT_BIRTHCNTRY,STUDENT_BIRTHPLACE,STUDENTGENERATION,TITLE1ASSTTYPECODE,TITLE1MATHIND,TITLE1READIND,TRANS_MODE_AM,TRUEGRADE,UNACCOMP_YOUTH,
+to_char(USSCHENTRYDATE,'YYYY-MM-DD') USSCHENTRYDATE,YRGEDEARNED,SELFCONTAINED,INCLUDEINREPORTING,TRANS_AM_COMMENT,TRANS_PM_COMMENT,
+to_char(ADULTED_ENTRYDATE,'YYYY-MM-DD') ADULTED_ENTRYDATE,to_char(ADULTED_EXITDATE,'YYYY-MM-DD') ADULTED_EXITDATE,AP_PARTICIPANT_NBR,IB_CANDIDATE_NBR,OTHER_ALTASSESSTEST_SCHOOLID,PRECODE3,PRECODE4,
+ to_char( ADULTED_GRADDATE,'YYYY-MM-DD') ,
+  ELASESSIONSORALADMIN,
+  ELIG504_NOPLANIND,
+  EOCEPPAPERELA,
+  EOCEPPAPERMATH,
+  EOCEPPAPERSCIENCE,
+  EOCEPPAPERSOCSTU,
+  G38PAPERELA,
+  G38PAPERMATH,
+  G38PAPERSCIENCE,
+  G38PAPERSOCSTU,
+   to_char( MEDICAIDELIGIBLE_DATE,'YYYY-MM-DD') ,
+  NEEDSBRAILLEIND,
+  PRECODE5,
+  PRECODE6,
+  PRECODE7,
+  PRECODE8 ,AED_COMPLETION_DATE
+      ,AED_OPTOUT_DATE
+      ,CPR_COMPLETION_DATE
+      ,CPR_OPTOUT_DATE
+      ,CEIS_IND
+      ,INIT_TESTDATE
+      ,INIT_TESTSCORE
+      ,INIT_TESTTYPE,PIP_STATUS,  to_char( SEI_CREATE_DATE,'YYYY-MM-DD') ,SEI_STATUS,WAIVER_IND,CR_ACCOMMODATIONS,CR_grade12,CR_PaPER
+, UNIVERSAL_SCREENER,cr_oral_accommodation,elp_paper,TIER ,diploma_seals,specialization_area from s_sc_stu_x
+        ]]>
+        </sql>
+    </query>
+
+    <!-- Teachers -->
+    <query name="com.lex1.school.teachers" coreTable="Teachers" flattened="true">
+        <description>Queries for teacher data</description>
+        <columns>
+             <column>t.STATUS</column>
+<column>t.STAFFSTATUS      </column>
+<column>t.DCID      </column>
+<column>t.ID      </column>
+<column>t.SCHOOLID      </column>
+<column>t.EMAIL_ADDR</column>
+<column>t.SCHOOL_PHONE</column>
+<column>t.HOME_PHONE </column>
+<column>t.STATE</column>
+<column>t.ZIP </column>
+<column>t.LAST_NAME</column>
+<column>t.FIRST_NAME</column>
+<column>t.STREET</column>
+<column>t.CITY </column>
+<column>t.ETHNICITY</column>
+<column>t.SCHED_GENDER</column>
+<column>t.TEACHERNUMBER</column>
+<column>t.TITLE</column>
+<column>u.gender</column>
+<column>t.lastfirst</column>
+ <column>t.sif_stateprid</column>
+<column>sx.tchr_id</column>
+        </columns>
+        <sql>
+        <![CDATA[
+            SELECT distinct  t.STATUS      ,t.STAFFSTATUS      ,t.DCID      ,t.ID      ,t.SCHOOLID      ,t.EMAIL_ADDR
+      ,t.SCHOOL_PHONE      ,t.HOME_PHONE      ,t.STATE      ,t.ZIP      ,t.LAST_NAME
+      ,t.FIRST_NAME      ,t.STREET      ,t.CITY      ,t.ETHNICITY      ,t.SCHED_GENDER
+      ,t.TEACHERNUMBER      ,t.TITLE,u.gender,t.lastfirst, t.sif_stateprid,sx.tchr_id
+      FROM Teachers t
+      left outer join users on users.staffpers_guid = t.staffpers_guid
+      left outer join U_SCHOOLSTAFFUSERFIELDS u on u.schoolstaffdcid = t.dcid
+      left outer join s_sc_usr_x sx on sx.usersdcid = users.dcid
+        ]]>
+        </sql>
+    </query>
+
+    <!-- Courses -->
+    <query name="com.lex1.school.courses" coreTable="courses" flattened="true">
+        <description>Queries to fetch course data</description>
+        <columns>
+            <column>DCID</column>
+      <column>ID</column>
+<column>COURSE_NUMBER</column>
+<column>COURSE_NAME</column>
+<column>CREDIT_HOURS</column>
+<column>SCHOOLID</column>
+<column>VOCATIONAL</column>
+<column>STATUS</column>
+<column>CREDITTYPE</column>
+<column>SCHED_YEAR</column>
+<column>SCHED_DEPARTMENT</column>
+<column>SCHED_COURSESUBJECTAREACODE</column>
+<column>GRADESCALEID</column>
+<column>excludefromstoredgrades</column>
+        </columns>
+        <sql>
+        <![CDATA[
+            SELECT DCID
+      ,ID
+      ,COURSE_NUMBER
+      ,COURSE_NAME
+      ,CREDIT_HOURS
+      ,SCHOOLID
+      ,VOCATIONAL
+      ,STATUS
+      ,CREDITTYPE
+      ,SCHED_YEAR
+      ,SCHED_DEPARTMENT
+      ,SCHED_COURSESUBJECTAREACODE
+      ,GRADESCALEID,excludefromstoredgrades
+     
+  FROM Courses
+        ]]>
+        </sql>
+    </query>
+
+    <!-- Sections -->
+    <query name="com.lex1.school.sections" coreTable="sections" flattened="true">
+        <description>Queries for section data</description>
+        <columns>
+            <column>s.DCID</column>
+<column>s.ID</column>
+<column>s.SCHOOLID</column>
+<column>s.COURSE_NUMBER</column>
+<column>s.GRADE_LEVEL</column>
+<column>s.SECTION_NUMBER</column>
+<column>s.TEACHER</column>
+<column>s.TERMID</column>
+<column>s.room</column>
+<column>s.expression</column>
+<column>s.gradescaleid</column>
+<column>s.excludefromstoredgrades</column>
+<column>s.wheretaught</column>
+<column>u.immersion</column>
+<column>s.EXCLUDE_ADA</column>
+        </columns>
+        <sql>
+        <![CDATA[
+            SELECT s.DCID
+      ,s.ID
+      ,s.SCHOOLID
+      ,s.COURSE_NUMBER
+      ,s.GRADE_LEVEL
+      ,s.SECTION_NUMBER
+      ,s.TEACHER
+,s.TERMID,s.room,s.expression,s.gradescaleid,s.excludefromstoredgrades,
+s.wheretaught,u.immersion,s.EXCLUDE_ADA
+  FROM Sections s
+   left outer join  u_Sc3201_sectionextras u on u.sectionsdcid = s.dcid
+where s.termid >= (select distinct currentyearid from u_Sc3201_Schools) * 100
+        ]]>
+        </sql>
+    </query>
+
+    <!-- CC -->
+    <query name="com.lex1.school.cc" coreTable="cc" flattened="true">
+        <description>Queries for student to section roster mapping</description>
+        <columns>
+            <column>cc.dcid</column>
+           <column>cc.ID</column>
+<column>cc.STUDENTID</column>
+<column>cc.SECTIONID</column>
+<column>cc.COURSE_NUMBER</column>
+<column>cc.SECTION_NUMBER</column>
+<column>cc.DATEENROLLED</column>
+<column>cc.DATELEFT</column>
+<column>cc.termid</column>
+        </columns>
+        <sql>
+        <![CDATA[
+            SELECT cc.DCID
+      ,cc.ID
+      ,cc.STUDENTID
+      ,cc.SECTIONID
+      ,cc.COURSE_NUMBER
+      ,cc.SECTION_NUMBER
+      ,cc.DATEENROLLED
+      ,cc.DATELEFT,cc.termid
+  FROM CC
+where cc.termid >= (select distinct currentyearid from u_Sc3201_schools) * 100
+        ]]>
+        </sql>
+    </query>
+</queries>
