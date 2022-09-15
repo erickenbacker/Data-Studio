@@ -1,6 +1,6 @@
 <queries>
     <!-- Students -->
-    <query name="com.lex1.school.students" coreTable="students" flattened="true">
+    <query name="com.lex1accnt.school.students" coreTable="students" flattened="true">
         <description>Queries for student data</description>
         <columns>
             <column>s.dcid</column>
@@ -62,7 +62,7 @@ or grade_level = 99)
     </query>
 
     <!-- Precode -->
-    <query name="com.lex1.school.s_sc_stu_x" coreTable="s_sc_stu_x" flattened="true">
+    <query name="com.lex1accnt.school.s_sc_stu_x" coreTable="s_sc_stu_x" flattened="true">
         <description>Queries for precode data</description>
         <columns>
             <column>STUDENTSDCID</column>
@@ -264,7 +264,7 @@ to_char(ADULTED_ENTRYDATE,'YYYY-MM-DD') ADULTED_ENTRYDATE,to_char(ADULTED_EXITDA
     </query>
 
     <!-- Teachers -->
-    <query name="com.lex1.school.teachers" coreTable="Teachers" flattened="true">
+    <query name="com.lex1accnt.school.teachers" coreTable="Teachers" flattened="true">
         <description>Queries for teacher data</description>
         <columns>
              <column>t.STATUS</column>
@@ -305,7 +305,7 @@ to_char(ADULTED_ENTRYDATE,'YYYY-MM-DD') ADULTED_ENTRYDATE,to_char(ADULTED_EXITDA
     </query>
 
     <!-- Courses -->
-    <query name="com.lex1.school.courses" coreTable="courses" flattened="true">
+    <query name="com.lex1accnt.school.courses" coreTable="courses" flattened="true">
         <description>Queries to fetch course data</description>
         <columns>
             <column>DCID</column>
@@ -345,7 +345,7 @@ to_char(ADULTED_ENTRYDATE,'YYYY-MM-DD') ADULTED_ENTRYDATE,to_char(ADULTED_EXITDA
     </query>
 
     <!-- Sections -->
-    <query name="com.lex1.school.sections" coreTable="sections" flattened="true">
+    <query name="com.lex1accnt.school.sections" coreTable="sections" flattened="true">
         <description>Queries for section data</description>
         <columns>
             <column>s.DCID</column>
@@ -383,7 +383,7 @@ where s.termid >= (select distinct currentyearid from u_Sc3201_Schools) * 100
     </query>
 
     <!-- CC -->
-    <query name="com.lex1.school.cc" coreTable="cc" flattened="true">
+    <query name="com.lex1accnt.school.cc" coreTable="cc" flattened="true">
         <description>Queries for student to section roster mapping</description>
         <columns>
             <column>cc.dcid</column>
